@@ -1,0 +1,58 @@
+<div class="container-fluid">
+  <div class="row m-2">
+    <h3>Please enter dimensions</h3>
+    <div class="col-md-4 m-2">
+      <img src="{{ image.url }}" height="200" width="200" />
+    </div>
+    <div class="col-md-3 m-2">
+      <form>
+        <div class="form-group">
+          <label for="height">Height</label>
+          <input name="height" type="text" class="form-control"  
+          pattern="^[0-9]*$"
+          maxlength="4"
+          required
+          placeholder="(Any number)"
+          [(ngModel)]="height"
+          #heightField="ngModel"
+          (ngModelChange)="validateHeight()"
+          />
+          <div
+            class="text-danger"
+            *ngIf="formFieldErrors.height && heightField.dirty"
+          >
+            Please provide a valid height
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="width">Width</label>
+          <input name="width" type="text" class="form-control" 
+          pattern="^[0-9]*$"
+          maxlength="4"
+          required
+          placeholder="(Any number)"
+          [(ngModel)]="width"
+          #widthField="ngModel"
+          (ngModelChange)="validateWidth()"/>
+          <div
+            class="text-danger"
+            *ngIf="formFieldErrors.width && widthField.dirty"
+          >
+            Please provide a valid width
+          </div>
+        </div>
+        <div class="form-group mt-3">
+            <button [disabled]="(hasWidthError || hasHeightError)" name="width" type="submit" class="btn btn-primary" (click)="submit()" >Resize</button>
+          </div>
+      </form>
+    </div>
+  </div>
+
+    <ng-container *ngIf="resizedImage?.url">
+        <div>
+            <h3>Resized Image</h3>
+        </div>
+        <img src="{{resizedImage.url}}" />
+    </ng-container>
+</div>

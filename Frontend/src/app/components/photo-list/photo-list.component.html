@@ -1,0 +1,20 @@
+<div class="container-fluid">
+    <h2>List Of Images</h2>
+    <div class="row m-5">
+        <h3>Click on the image to transform</h3>
+        <div class="col-md-3 m-5" *ngFor="let image of files">
+                <img class="cursor" (click)="routeToDetailPage(image)" src="{{image.url}}"  height="150" width="150">
+        </div>
+    </div>
+
+    <div class="row m-5">
+        <h3>Upload New Image (.jpg only)</h3>
+        <div class="image-upload">
+            <input class="cursor" type="file" (change)="onFileChange($event)" />
+            <span *ngIf="fileError" class="text-danger">Only JPG extension files can be uploaded</span>
+            <div class="mt-4">
+                <button [disabled]="fileError" type="button" class="btn btn-primary" (click)="uploadImage()">Upload Image</button>
+            </div>
+          </div>
+    </div>
+</div>
