@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { fileResponse } from 'src/app/constants/photo.constant';
+import { fileResponse, fileResponseObject } from 'src/app/constants/photo.constant';
 import { PhotoService } from 'src/app/services/photo.service';
 
 @Component({

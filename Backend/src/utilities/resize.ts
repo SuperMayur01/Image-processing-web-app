@@ -15,16 +15,14 @@ const resize = async (
     }
 
     const assetname: string = path.join(
-      __dirname + '../../../assets/' + JSON.parse(filename) 
+      __dirname + '../../../assets/' + JSON.parse(filename)
     );
 
     //sharp to perform image processing
     await sharp(assetname)
       .resize(width, height)
       .toFile(
-        path.join(
-          __dirname + '../../../assets/converted/' + convertedFileName
-        )
+        path.join(__dirname + '../../../assets/converted/' + convertedFileName)
       );
     return true;
   } catch (error) {

@@ -42,7 +42,7 @@ export class PhotoListComponent implements OnInit {
   }
 
   uploadImage() {
-    this.photoService.uploadFile(this.selectedFile).subscribe((res:any)=> {
+    this.photoService.uploadFile(this.selectedFile).subscribe(()=> {
       this.getAllImages();
     })
   }

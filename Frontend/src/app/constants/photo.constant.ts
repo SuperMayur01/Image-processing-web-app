@@ -1,4 +1,9 @@
 export interface fileResponse {
-    url : string;
+    url: string;
     name: string;
-  }
+}
+
+export const fileResponseObject = {
+    url: '',
+    name: ''
+}

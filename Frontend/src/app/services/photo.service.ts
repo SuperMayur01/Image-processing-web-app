@@ -19,13 +19,13 @@ export class PhotoService {
     return this.http.get(`${this.baseUrl}${imageName}`);
   }
 
-  getResizedImage(filename: string, width: number, height: number) {
+  getResizedImage(filename: string, width: number, height: number): Observable<any> {
     return this.http.get(`${this.baseUrl}api/image?filename=${filename}&width=${width}&height=${height}`);
   }
 
-  uploadFile (file:File) {
+  uploadFile(file: File): Observable<any> {
     let formParams = new FormData();
-   formParams.append('file', file)
+    formParams.append('file', file)
     return this.http.post(`${this.baseUrl}api/upload`, formParams)
   }
 }
