@@ -20,17 +20,23 @@ Lint - npm run lint
 
 Endpoints
 <pre>
-/api - 404 
+GET - /api - 404 
 </pre>
 <pre>
-/api/image - 400 
+GET - /api/image
 </pre>
 <pre>
-/api/image?{filename} - 200 with the converted file with default dimensions as response
+GET - /api/getAllImages
 </pre>
 <pre>
-/api/image?{filename}&{width}&{height} - 200 with the converted file as response with specified dimensions
-Example : http://localhost:{your_port_number}/api/image?filename=fish&width=100&height=200
+POST - /api/upload
+</pre>
+<pre>
+GET - /api/image?{filename} - 200 with the converted file with default dimensions as response
+</pre>
+<pre>
+GET - /api/image?{filename}&{width}&{height} - 200 with the converted file as response with specified dimensions
+Example : http://localhost:3000/api/image?filename=fish.jpg&width=100&height=200
 </pre>
 
 Middlewares
@@ -40,9 +46,13 @@ validateQuery - to check query string before processing
 <pre>
 handleRequest - to convert image and serve as response
 </pre>
+<pre>
+sendAllImages - to send all image files present in assets folder
+</pre>
 
 
 <pre>
 Create a .env and configure variable "PORT" in it.
-This will be used to run the application.
+This will be used to run the application.'
+By default, I have pushed the .env file for the purpose of evaluation.
 </pre>
