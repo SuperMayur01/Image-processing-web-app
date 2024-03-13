@@ -54,7 +54,7 @@ export class PhotoDetailComponent implements OnInit {
     if (this.hasWidthError || this.hasHeightError){
       return;
     } else {
-      this.photoService.getResizedImage(this.image.name, Number(this.width), Number(this.height)).subscribe((res: any)=> {
+      this.photoService.getResizedImage(this.image.name, Number(this.width), Number(this.height)).subscribe((res)=> {
         this.resizedImage = res;
       });
     }

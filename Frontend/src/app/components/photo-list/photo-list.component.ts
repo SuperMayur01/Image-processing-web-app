@@ -32,7 +32,7 @@ export class PhotoListComponent implements OnInit {
     this.router.navigate(['/detail'], { state: { image } });
   }
 
-  onFileChange(event: any) {
+  onFileChange(event) {
     this.selectedFile = event.target.files[0];
     if (this.selectedFile.type === "image/jpeg") {
       this.fileError = false;
