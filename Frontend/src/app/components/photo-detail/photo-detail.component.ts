@@ -41,7 +41,7 @@ export class PhotoDetailComponent implements OnInit {
   }
 
   validateWidth() {
-    if (!this.width || isNaN(Number(this.width)) || Number(this.height) <= 0) {
+    if (!this.width || isNaN(Number(this.width)) || Number(this.width) <= 0) {
       this.hasWidthError = true;
       this.formFieldErrors.width = "Please provide a valid width"
     } else {
