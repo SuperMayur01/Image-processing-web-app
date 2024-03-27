@@ -11,7 +11,7 @@ import { PhotoService } from 'src/app/services/photo.service';
 })
 export class PhotoListComponent implements OnInit {
 
-  files: fileResponse[] = [];
+  files: fileResponse[] | undefined = [];
   selectedFile!: File;
   fileError: boolean = false;
 

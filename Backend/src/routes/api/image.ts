@@ -51,9 +51,7 @@ const handleRequest = async function (
         res.status(200).json(fileObject);
         res.end();
       } else {
-        res.send(
-          'Image does not exist.'
-        );
+        res.send('Image does not exist.');
       }
     }
   } catch (error) {
